@@ -5,8 +5,8 @@ var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
 
 builder.WebHost.UseUrls($"http://*:{port}");
 
-string connection = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connection));
+// string connection = builder.Configuration.GetConnectionString("DefaultConnection");
+// builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connection));
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -27,7 +27,9 @@ app.MapGet("/healthz", () => Results.Ok("Healthy"));
 
 app.UseAuthorization();
 
-app.MapGet("/", async (AppDbContext db) => await db.Employee.ToListAsync());
+
+app.MapGet("/", () => "API is running (DB disabled)");
+
 app.MapControllers();
 
 app.Run();
