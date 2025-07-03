@@ -12,7 +12,7 @@ WORKDIR /App
 
 COPY --from=build-env /App/out ./
 
-EXPOSE 80
-ENV ASPNETCORE_URLS=http://+:8080
+EXPOSE 8080
+ENV ASPNETCORE_URLS=http://+:${PORT}
 
 ENTRYPOINT ["dotnet", "EmployeeRecordsApp.dll"]
