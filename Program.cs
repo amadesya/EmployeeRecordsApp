@@ -14,12 +14,16 @@ builder.Services.AddControllers();
 
 var app = builder.Build();
 
+// app.UseHttpsRedirection();
+
 app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
     c.SwaggerEndpoint("/swagger/v1/swagger.json", "Employee API V1");
     c.RoutePrefix = "swagger";
 });
+
+app.MapGet("/healthz", () => Results.Ok("Healthy"));
 
 app.UseAuthorization();
 
