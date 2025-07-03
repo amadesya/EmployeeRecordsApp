@@ -1,0 +1,33 @@
+namespace EmployeeRecordsApp.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class EmployeesController : ControllerBase
+    {
+        private readonly EmployeeRecordsAppDbContext dbContext;
+        public EmployeesController(EmployeeRecordsAppDbContext dbContext)
+        {
+            this.dbContext = dbContext;
+        }
+        [HttpGet]
+        public IActionResult GetAllEmployees()
+        {
+            var allEmployees = dbContext.Employee.ToList();
+            return Ok(allEmployees);
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult GetEmployees(int id)
+        {
+            var employee = employees.FirstOrDefault(e => e.EmployeeId == id);
+
+            if (employee == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(employee);
+        }
+    }
+}
+

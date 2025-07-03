@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EmployeeRecordsApp</name>
+    </assembly>
+    <members>
+        <member name="M:EmployeesController.CreateEmployee(Employee)">
+            <summary>
+            Create new employee
+            </summary>
+            <param name="employee">Object of class Employee</param>
+            <returns>Created employee</returns>
+        </member>
+        <member name="M:EmployeesController.DeleteEmployee(System.Int32)">
+            <summary>
+            Delete employee by ID
+            </summary>
+            <param name="id">Employee ID</param>
+        </member>
+        <member name="M:EmployeesController.GetEmployee(System.Int32)">
+            <summary>
+            Get employee by ID
+            </summary>
+            <param name="id">Employee ID</param>
+            <returns>Information about employee</returns>
+        </member>
+        <member name="M:EmployeesController.GetEmployees">
+            <summary>
+            Get all employees
+            </summary>
+            <returns>List of all employees</returns>
+        </member>
+        <member name="M:EmployeesController.GetEmployeesByPosition(System.Int32)">
+            <summary>
+            Get employees by position ID
+            </summary>
+            <param name="positionId">Position ID</param>
+            <returns>List of employees</returns>
+        </member>
+        <member name="M:EmployeesController.UpdateEmployee(System.Int32,Employee)">
+            <summary>
+            Update information about employee
+            </summary>
+            <param name="id">Employee ID</param>
+            <param name="employee">Information about employee</param>
+        </member>
+    </members>
+</doc>
