@@ -32,4 +32,6 @@ app.MapGet("/", () => "API is running (DB disabled)");
 
 app.MapControllers();
 
+Console.WriteLine("Before app.Run();");
+
 app.Run();
